@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+
+?>
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +20,17 @@
 <script src="jquery.backstretch.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
-<body class="fontbody" style="background-image : url(img/Unisel.jpg); no-repeat center center fixed; background-size: cover;">
+<body class="fontbody" style="background-image : url(img/unisel.jpg); no-repeat center center fixed; background-size: cover;">
 <div class="row " >
 	<div class="large-4 columns blackblur "  style="margin-top:100px; ">
-		<p class="fontslabo " style="text-align:left; font-size:18px;"><br><h4>Payment Deposit Accepted</h4><hr><br>Please check your email regarding your deposit payment . Thank you on using our facility.</p>
+		<p class="fontslabo " style="text-align:left; font-size:18px;"><br><h4>Transaction Cancelled</h4><hr> Dear <?php echo $_SESSION['firstname'];?>, <br>You cancel your deposit. Your payment status is pending.</p>
 		<br>
-		<a class="button small" style="background-color:#2ecc71;" href="#">Homepage</a>
-		<a class="button small" style="background-color:#2ecc71;" href="index.php">Make New Booking</a></p>
+		<a class="button small" href="#">Homepage</a>
+		<a class="button small" href="index.php">Make New Booking</a></p>
 	</div>
 </div>
+<?php
+session_unset();
+session_destroy();
+?>
 </body></html>

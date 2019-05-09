@@ -87,7 +87,7 @@ $message .="															<td style=\"width:200px;\">Total</td>\n";
 $message .="															<td  style=\"width:200px;\"> <b>RM".$_SESSION['total_amount']."</b></td>\n";
 $message .="														</tr>\n";
 $message .="														<tr>\n";
-$message .="															<td style=\"width:200px;\">15% Deposit Due</td>\n";
+$message .="															<td style=\"width:200px;\">10% Deposit Due</td>\n";
 $message .="															<td  style=\"width:200px;\"><b>RM".$_SESSION['deposit']."</b></td>\n";
 $message .="														</tr>\n";;
 $message .="														\n";
@@ -98,7 +98,7 @@ $message .="                     <form action=\"https://www.sandbox.paypal.com/c
 $message .="					<input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">\n";
 $message .="					<input type=\"hidden\" name=\"hosted_button_id\" value=\"3FWZ42DLC5BJ2\">\n";
 $message .="					<input type=\"hidden\" name=\"lc\" value=\"MY\">\n";
-$message .="					<input type=\"hidden\" name=\"item_name\" value=\"15% Hotel Deposit for Booking ID #".$_SESSION['booking_id']."; \">\n";
+$message .="					<input type=\"hidden\" name=\"item_name\" value=\"10% Homestay Deposit for Booking ID #".$_SESSION['booking_id']."; \">\n";
 $message .="					<input type=\"hidden\" name=\"amount\" value=\"".$_SESSION['deposit']."\">\n";
 $message .="					<input type=\"hidden\" name=\"currency_code\" value=\"MYR\">\n";
 $message .="					<input type=\"hidden\" name=\"button_subtype\" value=\"services\">\n";

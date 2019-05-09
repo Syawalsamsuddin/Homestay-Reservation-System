@@ -85,9 +85,8 @@ $_SESSION["totalchild"] = $_POST['totalchild'];
 				<div class="large-12 columns" >
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" >
 					<input type="hidden" name="cmd" value="_xclick">
-					<input type="hidden" name="business" value="mrzulkarnine@gmail.com">
 					<input type="hidden" name="lc" value="MY">
-					<input type="hidden" name="item_name" value="15% Hotel Deposit Payment">
+					<input type="hidden" name="item_name" value="10% Homestay Deposit Payment">
 					<input type="hidden" name="amount" value="<?php $amount = $_POST['global_deposit']; print $amount; ?>">
 					<input type="hidden" name="currency_code" value="MYR">
 					<input type="hidden" name="button_subtype" value="services">

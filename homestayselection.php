@@ -102,7 +102,7 @@ $_SESSION['childrens'] = $_POST["totalchildrens"];
 						</div>
 						<div class="large-4 columns">
 						<p ><span class="fontgrey">Rate : MYR </span><span style="font-size:24px;">180</span><span class="fontgrey">/ night</span><br>
-						<span style="text-align:right;">Homestay  available</span>
+						<span style="text-align:right;">Unit  available</span>
 						</p>
 							<div class="row">
 								<div class="large-6 columns">
@@ -134,7 +134,7 @@ $_SESSION['childrens'] = $_POST["totalchildrens"];
 						</div>
 						<div class="large-4 columns">
 						<p ><span class="fontgrey">Rate : MYR </span><span style="font-size:24px;">180</span><span class="fontgrey">/ night</span><br>
-						<span style="text-align:right;">Homestay available</span>
+						<span style="text-align:right;">Unit available</span>
 						</p>
 							<div class="row">
 								<div class="large-6 columns">

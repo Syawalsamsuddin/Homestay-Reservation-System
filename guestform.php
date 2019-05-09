@@ -1,12 +1,10 @@
 <?php
 session_start();
 	include './auth.php';
-	if(!isset($_SESSION[' homestay_id'])){
+	if(!isset($_SESSION['homestay_id'])){
 						
 						$_SESSION['homestay_id'] = array();
-						
 						$_SESSION['homestayname'] = array();
-						
 						$_SESSION['homestayqty'] = array();
 						$_SESSION['ind_rate'] = array();
 						$_SESSION['total_amount'] = 0;
@@ -27,8 +25,9 @@ session_start();
 								$_SESSION['homestayqty'][$count] = $_POST["qtyhomestay".$row['homestay_id'].""];
 								$_SESSION['homestayname'][$count] = $_POST["homestay_name".$row['homestay_id'].""];
 								
-								$_SESSION['ind_rate'][$count] = $row['rate']  * $_POST["qtyhomestay".$row[homestay_id].""];
-								$_SESSION['total_amount'] =  ( $row['rate']  * $_POST["qtyhomestay".$row[homestay_id].""] * $_SESSION['total_night'] ) + $_SESSION['total_amount'] ;
+								$_SESSION['ind_rate'][$count] = $row['rate']  * $_POST["qtyhomestay".$row['homestay_id'].""];
+								
+								$_SESSION['total_amount'] =  ( $row['rate']  * $_POST["qtyhomestay".$row['homestay_id'].""] * $_SESSION['total_night'] ) + $_SESSION['total_amount'] ;
 								$_SESSION['deposit'] = $_SESSION['total_amount'] * 0.10;
 								$count = $count + 1;
 							}
@@ -36,7 +35,6 @@ session_start();
 											
 				
 					}
-
 	
 
 
@@ -58,11 +56,11 @@ session_start();
 <div class="large-12 columns">
 		<div class="large-3 columns centerdiv">
 			<a href="sessiondestroy.php" class="button round blackblur fontslabo" >1</a>
-			<p class="fontgrey">Please select Date</p>
+			<p class="fontgrey">Please Select Date</p>
 		</div>
 		<div class="large-3 columns centerdiv">
 			<a href="unsethomestaychosen.php" class="button round blackblur fontslabo" >2</a>
-			<p class="fontgrey">Select homestay</p>
+			<p class="fontgrey">Select Homestay</p>
 		</div>
 		<div class="large-3 columns centerdiv">
 			<a href="#" class="button round fontslabo" style="background-color:#2ecc71;">3</a>
@@ -148,14 +146,14 @@ session_start();
 						</div>
 						<div class="row"><hr>
 							<div class="large-6 columns" style="max-width:100%;">
-								<span class="fontgreysmall" >homestay Selected
+								<span class="fontgreysmall" >Homestay Selected
 								</span>
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
 								<span class="fontgreysmall">Qty
 								</span>				
-							
+				
 							</div>
 						</div>
 						<div class="row">
