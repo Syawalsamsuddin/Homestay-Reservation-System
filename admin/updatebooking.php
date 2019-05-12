@@ -2,7 +2,7 @@
 session_start();
 include './auth.php';
 $re = mysqli_query($conn, "select * from user where username = '".$_SESSION['username']."'  AND password = '".$_SESSION['password']."' " );
-echo mysqli_error();
+echo mysqli_error($conn);
 if(mysqli_num_rows($re) > 0)
 {
 
