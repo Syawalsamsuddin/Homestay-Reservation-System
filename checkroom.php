@@ -13,12 +13,8 @@ if(isset($_POST["checkin"]) && !empty($_POST["checkin"]) && isset($_POST["checko
 	$_SESSION['total_night'] = $_SESSION['interval']->format('%d');
 
 }
-if(isset( $_POST["totaladults"] ) ){
-$_SESSION['adults'] = $_POST["totaladults"];
-}
-
-if(isset( $_POST["totalchildrens"] ) ){
-$_SESSION['childrens'] = $_POST["totalchildrens"];
+if(isset( $_POST["totalguests"] ) ){
+$_SESSION['guests'] = $_POST["totalguests"];
 }
 
 
@@ -35,7 +31,7 @@ $_SESSION['childrens'] = $_POST["totalchildrens"];
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
-<body class="fontbody">
+<body class="fontbody" style="background-image : url(img/unisel.jpg); no-repeat center center fixed; background-size: cover;">
 <div class="row foo" style="margin:30px auto 30px auto;">
 <div class="large-12 columns">
 		<div class="large-3 columns centerdiv">
@@ -94,28 +90,17 @@ $_SESSION['childrens'] = $_POST["totalchildrens"];
 						</div>
 						<div class="row">
 							<div class="large-6 columns" style="max-width:100%;">
-								<span class="fontgrey">Adults
+								<span class="fontgrey">Guests
 								</span>
 							</div>
 							
 							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['adults'];?>
+								<span class="">: <?php echo $_SESSION['guests'];?>
 								</span>				
 							
 							</div>
 						</div>
-						<div class="row">
-							<div class="large-6 columns" style="max-width:100%;">
-								<span class="fontgrey">Childrens
-								</span>
-							</div>
-							
-							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['childrens'];?>
-								</span>				
-							
-							</div>
-						</div>
+						
 						<div class="row">
 							<div class="large-6 columns" style="max-width:100%;">
 								<span class="fontgrey" style="font-size:13.2px;">No. of Night Stay(s)
