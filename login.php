@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Unisel Homestay Reservation| Admin Login</title>
+  <title>Unisel Homestay Reservation| Homestay Login</title>
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-bold text-black ">Admin Login</h1>
+            <h1 class="text-center text-bold text-black ">Homestay Sign In</h1>
             <div class="well row pt-2x pb-3x bk-light">
               <div class="col-md-8 col-md-offset-2">
                 <form method="post">
@@ -39,7 +39,7 @@
 
 
                   <button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
-
+                   <p> Not have an account? <a href="register.php">Sign Up here</a>.</p>
                 </form>
               </div>
             </div>

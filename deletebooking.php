@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include './auth.php';
 $re = mysqli_query($conn, "select * from user where username = '".$_SESSION['username']."'  AND password = '".$_SESSION['password']."' " );
 echo mysqli_error($conn);
@@ -14,12 +15,14 @@ session_destroy();
 header("location: index.htm");
 }
 
-$room_id = $_GET['homestay_id'];
-include './auth.php';
-$sql = "DELETE FROM homestay WHERE homestay_id=".$homestay_id."";
-$result = mysqli_query($sql);
+$id = $_GET['booking'];
 
-header('Refresh: 2; url=homestay.php');
+$sql = "DELETE FROM booking WHERE booking_id=".$id."";
+$result = mysqli_query($conn);
+$sql = "DELETE FROM homestaybook WHERE booking_id=".$id."";
+$result = mysqli_query($conn);
+
+header('Refresh: 2;url=dashboard.php');
 echo "<!DOCTYPE html>\n";
 echo "<html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n";
 echo "\n";
@@ -47,4 +50,5 @@ echo "</div>\n";
 echo "\n";
 echo "\n";
 echo "</body></html>";
+
 ?>

@@ -108,18 +108,7 @@ session_start();
 							
 							</div>
 						</div>
-						<div class="row">
-							<div class="large-5 columns" style="max-width:100%;">
-								<span class="fontgreysmall">Guests
-								</span>
-							</div>
-							
-							<div class="large-5 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['guests'];?>
-								</span>				
-							
-							</div>
-						</div>
+						
 						
 						<div class="row">
 							<div class="large-5 columns" style="max-width:100%;">
@@ -139,11 +128,6 @@ session_start();
 								</span>
 							</div>
 							
-							<div class="large-4 columns" style="max-width:100%;">
-								<span class="fontgreysmall">Qty
-								</span>				
-				
-							</div>
 						</div>
 						<div class="row">
 							<div class="large-6 columns" style="max-width:100%;">
@@ -159,17 +143,7 @@ session_start();
 								</span>
 							</div>
 							
-							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">
-								<?php foreach ($_SESSION['homestayqty'] as &$value1 ) {
-													echo $value1;
-													print "<br>";
-													} ;
-												
-												?>
-								</span>				
 							
-							</div>
 						</div>
 						
 					</div>	

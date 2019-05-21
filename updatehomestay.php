@@ -14,31 +14,27 @@ session_destroy();
 header("location: index.htm");
 }
 $id  = $_POST['homestay_id'];
-$total_homestay = "";
-$total_room = "";
-$total_homestay ="";
+$total = "";
+$view = "";
+$size ="";
 $rate ="";
 $desc ="";
-$parking_no ="";
-$address ="";
+$occupancy ="";
 $homestay_name ="";
 
 	$room_name = $_POST['homestay_name'];
 	if(isset($_POST['total_homestay'])){
-	$total_homestay =$_POST['total_homestay'];}
-	if(isset($_POST['total_room'])){
-	$total_room =$_POST['total_room'];}
-	if(isset($_POST['type_homestay'])){
-	$type_homestay = $_POST['type_homestay'];}
-	if(isset($_POST['parking_no'])){
-	$parking_no = $_POST['parking_no'];}
-	if(isset($_POST['address'])){
-	$address = $_POST['address'];}
+	$total =$_POST['total_homestay'];}
+	if(isset($_POST['view'])){
+	$view = $_POST['view'];}
+	if(isset($_POST['size'])){
+	$size = $_POST['size'];}
 	if(isset($_POST['rate'])){
 	$rate =$_POST['rate'];}
 	if(isset($_POST['desc'])){
 	$desc =$_POST['desc'];}
-	
+	if(isset($_POST['occupancy'])){
+	$occupancy =$_POST['occupancy'];}
 	
 if(isset($_FILES['img']['name']) && !empty($_FILES['img']['name']))
 {
@@ -53,7 +49,7 @@ $imgpathForSQL = $uploadDirForSql.$imagename.$imageFileType;
 
 	
 	$sql = "UPDATE homestay 
-	SET total_homestay='".$total_homestay."', total_room='".$total_room."', type_homestay='".$type_homestay."', parking_no ='".$parking_no."', address ='".$address."', homestay_name ='".$homestay_name."', descriptions ='".$desc."', rate ='".$rate."', imgpath ='".$imgpathForSQL."'
+	SET total_homestay='".$total."', occupancy='".$occupancy."', size='".$size."', view ='".$view."', view ='".$view."', homestay_name ='".$homestay_name."', descriptions ='".$desc."', rate ='".$rate."', imgpath ='".$imgpathForSQL."'
 	WHERE homestay_id='".$id."';";
 	$result = mysqli_query($sql);
 	echo mysqli_error($conn);
@@ -91,7 +87,7 @@ echo "</body></html>";
 {
 	
 	$sql2 = "UPDATE homestay
-	SET total_homestay='".$total_homestay."', total_room='".$total_room."', type_homestay='".$type_homestay."', parking_no ='".$parking_no."', address ='".$address."', homestay_name ='".$homestay_name."', descriptions ='".$desc."', rate ='".$rate."'
+	SET total_homestay='".$total."', occupancy='".$occupancy."', size='".$size."', view ='".$view."', view ='".$view."', homestay_name ='".$homestay_name."', descriptions ='".$desc."', rate ='".$rate."'
 	WHERE homestay_id='".$id."';";
 	$result2 = mysqli_query($sql2);
 	echo mysqli_error($conn);

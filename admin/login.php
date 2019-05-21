@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Unisel Homestay Reservation| Admin Login</title>
+  <title>Unisel Homestay Reservation| Homestay Login</title>
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
 
   <div class="login-page bk-img" style="background-color: white;">
@@ -25,7 +26,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-bold text-black ">Admin Login</h1>
+            <h1 class="text-center text-bold text-black ">Homestay </h1>
             <div class="well row pt-2x pb-3x bk-light">
               <div class="col-md-8 col-md-offset-2">
                 <form method="post">
@@ -48,6 +49,7 @@
       </div>
     </div>
   </div>
+   
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap-select.min.js"></script>

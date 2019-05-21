@@ -13,9 +13,7 @@ if(isset($_POST["checkin"]) && !empty($_POST["checkin"]) && isset($_POST["checko
 	$_SESSION['total_night'] = $_SESSION['interval']->format('%d');
 
 }
-if(isset( $_POST["totalguests"] ) ){
-$_SESSION['guests'] = $_POST["totalguests"];
-}
+
 
 
 ?>
@@ -88,18 +86,7 @@ $_SESSION['guests'] = $_POST["totalguests"];
 							
 							</div>
 						</div>
-						<div class="row">
-							<div class="large-6 columns" style="max-width:100%;">
-								<span class="fontgrey">Guests
-								</span>
-							</div>
-							
-							<div class="large-4 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['guests'];?>
-								</span>				
-							
-							</div>
-						</div>
+						
 						
 						<div class="row">
 							<div class="large-6 columns" style="max-width:100%;">
@@ -181,16 +168,18 @@ $_SESSION['guests'] = $_POST["totalguests"];
 								while($sub_row = mysqli_fetch_array($sub_result)){
 								
 								
-								print "					<p><h4>".$sub_row['homestay_name']."</h4></p>\n";
+								print "					<p><h4>".$sub_row2['homestay_name']."</h4></p>\n";
 								print "					<div class=\"row\">\n";
 								print "					\n";
 								print "						<div class=\"large-4 columns\">\n";
-								print "							<img src=\"".$sub_row['imgpath']."\"></img>\n";
+								print "							<img src=\"".$sub_row2['imgpath']."\"></img>\n";
 								print "						</div>\n";
 								print "						<div class=\"large-4 columns\">\n";
-								print "						<p><span class=\"fontgrey\">Occupancy : </span> ".$sub_row['occupancy']."<br>\n";
-								print "						<span class=\"fontgrey\">Size : </span> ".$sub_row['size']."\n";
-								print "						<br><span class=\"fontgrey\">View : </span> ".$sub_row['view']."</p>\n";
+								print "						<p><span class=\"fontgrey\"> Total Room : </span> ".$sub_row2['total_room']."<br>\n";
+								print "						<span class=\"fontgrey\"> Address : </span> ".$sub_row2['address']."\n";
+								print "						<br><span class=\"fontgrey\">Descriptions  : </span> ".$sub_row2['descriptions']."</p>\n";
+								
+								
 								print "\n";
 								print "						</div>\n";
 								print "						<div class=\"large-4 columns\">\n";
@@ -238,9 +227,12 @@ $_SESSION['guests'] = $_POST["totalguests"];
 								print "							<img src=\"".$sub_row2['imgpath']."\"></img>\n";
 								print "						</div>\n";
 								print "						<div class=\"large-4 columns\">\n";
-								print "						<p><span class=\"fontgrey\">Occupancy : </span> ".$sub_row2['occupancy']."<br>\n";
-								print "						<span class=\"fontgrey\">Size : </span> ".$sub_row2['size']."\n";
-								print "						<br><span class=\"fontgrey\">View : </span> ".$sub_row2['view']."</p>\n";
+								print "						<p><span class=\"fontgrey\"> Total Room : </span> ".$sub_row2['total_room']."<br>\n";
+								print "						<span class=\"fontgrey\"> Address : </span><br> ".$sub_row2['address']."\n";
+								print "						<br><br><span class=\"fontgrey\">Descriptions  : </span> ".$sub_row2['descriptions']."</p>\n";
+								
+
+
 								print "\n";
 								print "						</div>\n";
 								print "						<div class=\"large-4 columns\">\n";

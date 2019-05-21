@@ -13,13 +13,12 @@ session_destroy();
 header('location:index.htm');
 }
 
-$total_homestay = "";
-$total_room = "";
-$type_homestay = "";
-$parking_no ="";
+$total = "";
+$view = "";
+$size ="";
 $rate ="";
 $desc ="";
-$address ="";
+$occupancy ="";
 $imgpath ="";
 $homestay_name ="";
 $imageFileType = pathinfo($imgpath,PATHINFO_EXTENSION);
@@ -32,26 +31,24 @@ $imgpathForSQL = $uploadDirForSql.$imagename.$imageFileType;
 
 	$room_name = $_POST['homestay_name'];
 	if(isset($_POST['total_homestay'])){
-	$total_homestay =$_POST['total_homestay'];}
-	if(isset($_POST['total_room'])){
-	$total_room =$_POST['total_room'];}
-	if(isset($_POST['type_homestay'])){
-	$type_homestay = $_POST['type_homestay'];}
-	if(isset($_POST['parking_no'])){
-	$parking_no = $_POST['parking_no'];}
+	$total =$_POST['total_homestay'];}
+	if(isset($_POST['view'])){
+	$view = $_POST['view'];}
+	if(isset($_POST['size'])){
+	$size = $_POST['size'];}
 	if(isset($_POST['rate'])){
 	$rate =$_POST['rate'];}
 	if(isset($_POST['desc'])){
 	$desc =$_POST['desc'];}
-	if(isset($_POST['address'])){
-	$address =$_POST['address'];}
+	if(isset($_POST['occupancy'])){
+	$occupancy =$_POST['occupancy'];}
 		
-	$sql = "INSERT INTO homestay (homestay_id, total_homestay,total_room, address, parking_no, type_homestay, homestay_name, descriptions, rate, imgpath) VALUES (null, '".$total_homestay."', '".$total_room."','".$type_homestay."', '".$parking_no."', '".$address."', '".$homestay_name."', '".$desc."', '".$rate."', '".$imgpathForSQL."')";
+	$sql = "INSERT INTO homestay (homestay_id, total_homestay, occupancy, size, view, homestay_name, descriptions, rate, imgpath) VALUES (null, '".$total."', '".$occupancy."', '".$size."', '".$view."', '".$homestay_name."', '".$desc."', '".$rate."', '".$imgpathForSQL."')";
 	$result = mysqli_query($sql);
 	echo mysqli_error();
 	move_uploaded_file($_FILES["img"]["tmp_name"], $imgpath);
 	
-	header('Refresh: 3;url=homestay.php');
+	header('Refresh: 3;url=room.php');
 
 echo "<!DOCTYPE html>\n";
 echo "<html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n";

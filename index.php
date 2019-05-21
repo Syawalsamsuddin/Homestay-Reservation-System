@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+ 
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,13 +30,22 @@ session_start();
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
 <body class="fontbody" style="background-image : url(img/unisel.jpg); no-repeat center center fixed; background-size: cover;">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid" style="background-color: black;">
+
+        <div class="navbar-header" style="margin-right: 10px; padding:10px;">
+            <a href="login.php" style="color: white ;">Login</a>
+            <a href="confirmbooking.php" style="color: white ;">Confirm Booking</a>
+        </div>
+      </div>
+    </nav>
  
 <div class="row foo" style="margin:30px auto 30px auto;"><br><br>
 
 
 </div>
 </div>
- 
 <div class="row">
 	<div class="large-4 columns blackblur fontcolor" style="padding-top:10px;">
 	
@@ -49,46 +59,18 @@ session_start();
 							<input name="checkin" id="checkin" style="width:100%;"/>
 						</label>
 					</div>
-			</div>
-			<div class="row">
+			
 					
 					<div class="large-6 columns" style="max-width:100%;">
 						<label class="fontcolor" for="checkout">Check Out
 							<input name="checkout" id="checkout" style="width:100%;"/>
 						</label>
 					</div>
-			</div>
-					
-			<div class="row">
-				
-					<div class="large-6 columns">
-						<label class="fontcolor">Guests
-							
-								<select  name="totalguests" id="totalguests" style="width:100%;">
-								<option value="0">0</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								</select>
-							
-						</label>
-					</div>
-					
-					
-					
-				
-			</div>
+			</div><br>
 			
 			  <div class="row">
 				<div class="large-6 columns" >
-					<button name="submit" href="#" class="button small fontslabo" style="background-color:#2ecc71; width:100%;" >Check Availability</button>
+					<button name="submit" href="#" class="button small fontslabo" style="background-color: #2ecc71 ; width:100%;" >Check Availability</button>
 				</div>
 			  </div>
 			</form>
@@ -102,29 +84,13 @@ session_start();
 	function validateForm(form) {
 		var a = form.checkin.value;
 		var b = form.checkout.value;
-		var c = form.totaladults.value;
-		var d = form.totalchildrens.value;
 			if(a == null || b == null || a == "" || b == "") 
 			{
 			 alert("Please choose date");
 			 return false;
 			}
-			if(c == 0) 
-			{
-			 	if(d == 0) 
-				{
-				 alert("Please choose no. of guest");
-				 return false;
-				}
-			}
-			if(d == 0) 
-			{
-			 	if(c == 0) 
-				{
-				 alert("Please choose no. of guest");
-				 return false;
-				}
-			}
+			
+			
 
 	}
 </script>

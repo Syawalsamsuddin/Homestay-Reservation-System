@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-header('Refresh: 2;url=index.htm');
+header('Refresh: 2;url=login.htm');
 echo "<!DOCTYPE html>\n";
 echo "<html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n";
 echo "\n";
