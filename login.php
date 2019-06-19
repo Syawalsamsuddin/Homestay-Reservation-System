@@ -39,7 +39,7 @@
 
 
                   <button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
-                   <p> Not have an account? <a href="register.php">Sign Up here</a>.</p>
+                   <p> Not have an account? <a href="registration.php">Sign Up here</a>.</p>
                 </form>
               </div>
             </div>

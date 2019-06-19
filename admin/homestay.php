@@ -103,7 +103,7 @@ function fnSearch()
             <li ><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard <span class="sr-only">(current)</span></a></li>
             
 			<li class="active"><a href="homestay.php"><i class="icon-key"></i> Homestay</a></li>
-			
+			<li><a href="reg-user.php"><i class="icon-key"></i> Registered User</a></li>
 			
           </ul>
 

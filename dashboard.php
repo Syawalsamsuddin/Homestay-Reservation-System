@@ -128,9 +128,9 @@ function more3()
           <ul class="nav nav-sidebar">
             <li class="active"><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard <span class="sr-only">(current)</span></a></li>
             
-			<li><a href="homestay.php"><i class="icon-spin4"></i> My Profile </a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Booking </a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 4</a></li>
+			<li><a href="profile.php"><i class="icon-spin4"></i> My Profile </a></li>
+			<li><a href="booking.php"><i class="icon-spin4"></i> Booking </a></li>
+			<li><a href="homestay.php"><i class="icon-spin4"></i> Homestay Ads</a></li>
 			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 5</a></li>
 			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 6</a></li>
 			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 7</a></li>

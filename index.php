@@ -34,11 +34,13 @@ session_start();
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid" style="background-color: black;">
 
-        <div class="navbar-header" style="margin-right: 10px; padding:10px;">
-            <a href="login.php" style="color: white ;">Login</a>
-            <a href="confirmbooking.php" style="color: white ;">Confirm Booking</a>
-        </div>
-      </div>
+                <ul class="nav navbar-nav">
+                    <a href="index.php">Home</a>
+                    <a href="login.php">Sign In</a>
+           
+                </ul>
+               
+            </div>
     </nav>
  
 <div class="row foo" style="margin:30px auto 30px auto;"><br><br>

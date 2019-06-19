@@ -74,18 +74,7 @@ session_start();
 							
 							</div>
 						</div>
-						<div class="row">
-							<div class="large-5 columns" style="max-width:100%;">
-								<span class="fontgreysmall">Guests
-								</span>
-							</div>
-							
-							<div class="large-5 columns" style="max-width:100%;">
-								<span class="">: <?php echo $_SESSION['guests'];?>
-								</span>				
-							
-							</div>
-						</div>
+						
 						
 						<div class="row">
 							<div class="large-5 columns" style="max-width:100%;">
