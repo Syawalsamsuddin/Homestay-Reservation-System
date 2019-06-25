@@ -28,24 +28,30 @@ session_start();
   });
 </script>
 <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
+<meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style>
+	
+h1 { 
+	text-align: center;
+	color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ }
+ h2 {
+ 	text-align: left;
+ }
+ p.test1{
+ 	text-align: left;
+ 	text-indent: 50px;
+ 	 text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ }
+
+</style><meta class="foundation-mq-topbar"></head>
 <body class="fontbody" style="background-image : url(img/unisel.jpg); no-repeat center center fixed; background-size: cover;">
 
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid" style="background-color: black;">
+	
+ <h1> HOMESTAY RESERVATION PORTAL </h1>
 
-                <ul class="nav navbar-nav">
-                    <a href="index.php">Home</a>
-                    <a href="login.php">Sign In</a>
-           
-                </ul>
-               
-            </div>
-    </nav>
- 
-<div class="row foo" style="margin:30px auto 30px auto;"><br><br>
-
-
+<div class="row foo" style="margin:20px auto 20px auto;"><br><br>
+<p class="test1">Selamat datang ke Homestay Reservation Portal . Sebuah “One-Stop Portal”  carian dan tempahan yang disediakan untuk kemudahan warga unisel mahupun keluarga warga  mencari homestay yang berdekatan Unisel Kampus Bestari Jaya tanpa memerlu mencari secara manual atau membuat carian di internet</p>
 </div>
 </div>
 <div class="row">
@@ -77,11 +83,9 @@ session_start();
 			  </div>
 			</form>
 	</div>
-	
-
-
 </div>
 </div>
+
 <script>
 	function validateForm(form) {
 		var a = form.checkin.value;
@@ -107,4 +111,8 @@ session_start();
   ga('send', 'pageview');
 
 </script>
+
+
+
+
 </body></html>

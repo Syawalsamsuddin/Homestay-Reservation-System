@@ -167,7 +167,7 @@ session_start();
 				
 				  <div class="row">
 					<div class="large-12 columns" >
-						<button name="submit" href="#" class="button small fontslabo" style="background-color:#2ecc71; width:100%;">Edit Reservation</button>
+						<button name="submit" href="#" class="button small fontslabo" style="background-color:#2ecc71; width:100%;">Cancel Reservation</button>
 					</div>
 				  </div>
 				</form>
@@ -504,7 +504,9 @@ session_start();
 			</div>
 		  </div>
 		  <div class="row">
-			<div class="large-12 columns" style="text-align:right;"><button type="submit" class="button small fontslabo" style="background-color:#2ecc71;" onclick="return confirm('Are you sure you want to continue?')" >Confirm</button>
+			<div class="large-12 columns" style="text-align:right;">
+				<button type="reset" class="button small fontslabo" style="background-color:#2ecc71;" >Reset</button>
+				<button type="submit" class="button small fontslabo" style="background-color:#2ecc71;" onclick="return confirm('Are you sure you want to continue?')" >Confirm</button>
 		  </div>
 
 		  </div>
