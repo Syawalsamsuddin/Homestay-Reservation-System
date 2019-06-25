@@ -16,14 +16,14 @@ header("location: index.htm");
 $id  = $_POST['homestay_id'];
 $total_homestay = "";
 $total_room = "";
-$total_homestay ="";
+$type_homestay= "";
 $rate ="";
 $desc ="";
 $parking_no ="";
 $address ="";
 $homestay_name ="";
 
-	$room_name = $_POST['homestay_name'];
+	$homestay_name = $_POST['homestay_name'];
 	if(isset($_POST['total_homestay'])){
 	$total_homestay =$_POST['total_homestay'];}
 	if(isset($_POST['total_room'])){
@@ -93,7 +93,7 @@ echo "</body></html>";
 	$sql2 = "UPDATE homestay
 	SET total_homestay='".$total_homestay."', total_room='".$total_room."', type_homestay='".$type_homestay."', parking_no ='".$parking_no."', address ='".$address."', homestay_name ='".$homestay_name."', descriptions ='".$desc."', rate ='".$rate."'
 	WHERE homestay_id='".$id."';";
-	$result2 = mysqli_query($sql2);
+	$result2 = mysqli_query($conn,$sql2);
 	echo mysqli_error($conn);
 	header('Refresh: 3;url=homestay.php');
 	echo "<!DOCTYPE html>\n";

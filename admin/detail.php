@@ -142,10 +142,6 @@ function fnSearch()
 											}
 					print "</td>";
 					print "				</tr>\n";
-					print "				<tr><td>Total Adult</td>\n";
-					print "				<td>".$rows['total_adult']." </td></tr>\n";
-					print "				<tr><td>Total Children</td>\n";
-					print "				<td>".$rows['total_children']." </td>	</tr>\n";
 					print "				<tr><td>Checkin Date</td>\n";
 					print "				<td>".$rows['checkin_date']."</td></tr>\n";
 					print "				<tr><td>Checkout Date</td>\n";

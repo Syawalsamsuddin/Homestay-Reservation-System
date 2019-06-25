@@ -11,7 +11,7 @@ if(mysqli_num_rows($re) > 0)
 else
 {
 session_destroy();
-header("location: index.htm");
+header("location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -262,7 +262,6 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
 									  <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
@@ -289,8 +288,7 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
-									  <th>Total Amount</th>
+									   <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
 									  <th>Payment Status</th>
@@ -316,7 +314,7 @@ function more3()
 											print "                  ".$r['total']." ".$r['name']." <br>\n";
 											}
 											print "</td>";
-											print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
 											print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";
@@ -341,8 +339,7 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
-									  <th>Total Amount</th>
+									   <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
 									  <th>Payment Status</th>
@@ -366,7 +363,7 @@ function more3()
 											print "                  ".$r['total']." ".$r['name']."<br> \n";
 											}
 											print "</td>";
-											print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
 											print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";
@@ -391,7 +388,6 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
 									  <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
@@ -416,7 +412,7 @@ function more3()
 											print "                  ".$r['total']." ".$r['name']." <br>\n";
 											}
 											print "</td>";
-											print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
 											print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";

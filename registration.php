@@ -4,8 +4,21 @@ require_once('config.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Registration | PHP</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Unisel Homestay Reservation| Sign Up </title>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-social.css">
+  <link rel="stylesheet" href="css/bootstrap-select.css">
+  <link rel="stylesheet" href="css/fileinput.min.css">
+  <link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -15,13 +28,15 @@ require_once('config.php');
 	?>	
 </div>
 
-<div>
+<div class="login-page bk-img" style="background-color: white;">
 	<form action="registration.php" method="post">
 		<div class="container">
 			
 			<div class="row">
-				<div class="col-sm-3">
-					<h1>Registration</h1>
+				<div class="col-md-6 col-md-offset-3">
+					<h2 class="text-center text-bold text-black ">Registration</h2>
+					<div class="well row pt-2x pb-3x bk-light">
+              <div class="col-md-8 col-md-offset-2">
 					<p>Fill up the form with correct values.</p>
 					<hr class="mb-3">
 					<label for="username"><b>Username</b></label>
@@ -40,6 +55,7 @@ require_once('config.php');
 					<input class="form-control" id="password"  type="password" name="password" required>
 					<hr class="mb-3">
 					<input class="btn btn-primary" type="submit" id="register" name="create" value="Sign Up">
+					 <p> Already  have an account? <a href="login.php">Login here</a>.</p>
 				</div>
 			</div>
 		</div>

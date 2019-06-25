@@ -24,15 +24,9 @@ header("location: index.htm");
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-    <title>Booking System</title>
-
-  
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    
+    <title>Booking System</title>  
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
     <link href="css/dashboard.css" rel="stylesheet">
-
-    
 	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
@@ -86,7 +80,7 @@ function fnSearch()
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="color: #ffffff;">Admin Booking Panel</a>
+          <a class="navbar-brand" href="#" style="color: #ffffff;">User Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -101,8 +95,9 @@ function fnSearch()
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard <span class="sr-only">(current)</span></a></li>
-            
-			<li><a href="homestay.php"><i class="icon-key"></i> Homestay</a></li>
+            <li><a href="myprofile.php"><i class="icon-key"></i> My Profile </a></li>
+			<li><a href="homestay.php"><i class="icon-key"></i> Manage Homestay</a></li>
+			<li><a href="paymentproof.php"><i class="icon-key"></i> Payment </a></li>
 			
 			
           </ul>
@@ -142,10 +137,6 @@ function fnSearch()
 											}
 					print "</td>";
 					print "				</tr>\n";
-					print "				<tr><td>Total Adult</td>\n";
-					print "				<td>".$rows['total_adult']." </td></tr>\n";
-					print "				<tr><td>Total Children</td>\n";
-					print "				<td>".$rows['total_children']." </td>	</tr>\n";
 					print "				<tr><td>Checkin Date</td>\n";
 					print "				<td>".$rows['checkin_date']."</td></tr>\n";
 					print "				<tr><td>Checkout Date</td>\n";

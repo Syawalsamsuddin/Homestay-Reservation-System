@@ -14,10 +14,10 @@ session_destroy();
 header("location: index.htm");
 }
 
-$room_id = $_GET['homestay_id'];
+$homestay_id = $_GET['homestay_id'];
 include './auth.php';
 $sql = "DELETE FROM homestay WHERE homestay_id=".$homestay_id."";
-$result = mysqli_query($sql);
+$result = mysqli_query($conn,$sql);
 
 header('Refresh: 2; url=homestay.php');
 echo "<!DOCTYPE html>\n";

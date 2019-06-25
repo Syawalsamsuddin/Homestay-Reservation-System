@@ -1,8 +1,6 @@
-<?php
-session_start();
-
+<?php session_start();
 include './auth.php';
-$re = mysqli_query($conn , "select * from user where username = '".$_SESSION['username']."'  AND password = '".$_SESSION['password']."' " );
+$re = mysqli_query($conn, "select * from user where username = '".$_SESSION['username']."'  AND password = '".$_SESSION['password']."' " );
 echo mysqli_error($conn);
 if(mysqli_num_rows($re) > 0)
 {
@@ -10,22 +8,25 @@ if(mysqli_num_rows($re) > 0)
 } 
 else
 {
+
 session_destroy();
 header("location: index.htm");
 }
-?>
+
+ ?>
 <!DOCTYPE html>
+
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <meta name="description" content="">
     <meta name="author" content="">
- 
 
     <title>Booking System</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+   <link href="css/bootstrap.min.css" rel="stylesheet">
 
     
     <link href="css/dashboard.css" rel="stylesheet">
@@ -40,12 +41,17 @@ header("location: index.htm");
   <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="css/animation.css">
 
-
  </head>
 	<script>
 	  $(document).ready(function() {
 			$("#checkout").datepicker();
-			$("#checkin").datepicker();
+			$("#checkin").datepicker({
+			minDate : new Date(),
+			onSelect: function (dateText, inst) {
+			var date = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+			$("#checkout").datepicker("option", "minDate", date);
+			}
+			});
 			
 		
 	  });
@@ -54,52 +60,20 @@ function fnSearch()
 		{
 			var checkin=document.getElementById('checkin').value;
 			var checkout=document.getElementById('checkout').value;
+			var bookingid=document.getElementById('bookingid').value;
+			var firstname=document.getElementById('firstname').value;
 			$.ajax({
 				type: "POST",
 				url: "search.php",
-				data: "checkin=" + checkin + "&checkout=" + checkout,
+				data: "checkin=" + checkin + "&checkout=" + checkout + "&bookingid=" + bookingid + "&firstname=" + firstname,
 				success: function(resPonsE) 
 					{
-						document.getElementById('bookindetails').style.display='block'
-						document.getElementById('bookinginfo0').style.display='none'
-						document.getElementById('bookinginfo1').style.display='none'
-						document.getElementById('bookinginfo2').style.display='none'
-						document.getElementById('statistics').style.display='none'
 						document.getElementById('bookinginfo').innerHTML=resPonsE;
-							$('.delete').click (function () {
-							return confirm ("Are you sure you want to delete?") ;
-							});
 						return true;
 					}
 			});
 		}
-function more1()
-		{
-						document.getElementById('bookindetails').style.display='none'
-						document.getElementById('bookinginfo0').style.display='block'
-						document.getElementById('bookinginfo1').style.display='none'
-						document.getElementById('bookinginfo2').style.display='none'
-						document.getElementById('statistics').style.display='none'
-						
-		}
-function more2()
-		{
-						document.getElementById('bookindetails').style.display='none'
-						document.getElementById('bookinginfo1').style.display='block'
-						document.getElementById('bookinginfo0').style.display='none'
-						document.getElementById('bookinginfo2').style.display='none'
-						document.getElementById('statistics').style.display='none'
-						
-		}
-function more3()
-		{
-						document.getElementById('bookindetails').style.display='none'
-						document.getElementById('bookinginfo2').style.display='block'
-						document.getElementById('bookinginfo0').style.display='none'
-						document.getElementById('bookinginfo1').style.display='none'
-						document.getElementById('statistics').style.display='none'
-						
-		}		
+	  
 	</script>
   <body>
 
@@ -112,7 +86,7 @@ function more3()
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="color: #ffffff;">Homestay Owner Booking Panel</a>
+          <a class="navbar-brand" href="#" style="color: #ffffff;">User Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -127,15 +101,11 @@ function more3()
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard <span class="sr-only">(current)</span></a></li>
-            
-			<li><a href="profile.php"><i class="icon-spin4"></i> My Profile </a></li>
-			<li><a href="booking.php"><i class="icon-spin4"></i> Booking </a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Homestay Ads</a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 5</a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 6</a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 7</a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 8</a></li>
-			<li><a href="homestay.php"><i class="icon-spin4"></i> Function 9</a></li>
+            <li><a href="myprofile.php" style="color: blue;"><i class="icon-key"></i> My Profile </a></li>
+			<li><a href="homestay.php"style="color: blue;"><i class="icon-key"></i> Manage Homestay</a></li>
+			<li><a href="paymentproof.php" style="color: blue;"><i class="icon-key"></i> Payment </a></li>
+			
+			
           </ul>
 
         </div>
@@ -266,7 +236,6 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
 									  <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
@@ -293,8 +262,7 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
-									  <th>Total Amount</th>
+									   <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
 									  <th>Payment Status</th>
@@ -320,7 +288,7 @@ function more3()
 											print "                  ".$r['total']." ".$r['name']." <br>\n";
 											}
 											print "</td>";
-											print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
 											print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";
@@ -345,8 +313,7 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
-									  <th>Total Amount</th>
+									   <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
 									  <th>Payment Status</th>
@@ -370,7 +337,7 @@ function more3()
 											print "                  ".$r['total']." ".$r['name']."<br> \n";
 											}
 											print "</td>";
-											print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
 											print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";
@@ -395,7 +362,6 @@ function more3()
 									  <th>Check In</th>
 									  <th>Check Out</th>
 									  <th>Homestay</th>
-									  <th>Guests</th>
 									  <th>Total Amount</th>
 									  <th>Deposit</th>
 									  <th>Balance</th>
@@ -420,7 +386,7 @@ function more3()
 											print "                  ".$r['total']." ".$r['name']." <br>\n";
 											}
 											print "</td>";
-											print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
 											print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";

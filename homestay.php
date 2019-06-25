@@ -86,7 +86,7 @@ function fnSearch()
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="color: #ffffff;">Admin Booking Panel</a>
+          <a class="navbar-brand" href="#" style="color: #ffffff;"> User  Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -101,8 +101,9 @@ function fnSearch()
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li ><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard <span class="sr-only">(current)</span></a></li>
-            
-			<li class="active"><a href="homestay.php"><i class="icon-key"></i> Homestay</a></li>
+            <li><a href="myprofile.php"><i class="icon-key"></i> My Profile </a></li>
+			<li class="active"><a href="homestay.php"><i class="icon-key"></i> Manage Homestay</a></li>
+			<li><a href="paymentproof.php"><i class="icon-key"></i> Payment </a></li>
 			
 			
           </ul>
@@ -117,11 +118,12 @@ function fnSearch()
               <thead>
                 <tr>
                   <th>Homestay Name</th>
+                  <th>Total Homestay</th>
                   <th>Thumbnail</th>
                   <th>Total Room</th>
-				  <th>Size</th>
-                  <th>View</th>
-			      <th>Occupancy</th>
+				  <th>Type Homestay</th>
+                  <th>Parking</th>
+			      <th>Address</th>
                   <th>Rate</th>
                   <th>Description</th>
                 </tr>
@@ -133,11 +135,12 @@ function fnSearch()
 						if(mysqli_num_rows($result) > 0){
 							while ($row = mysqli_fetch_array($result) ){
 								print "<tr style=\"\">		 <td>".$row['homestay_name']."</td>\n";
-								print "                  <td><img src=\"../".$row['imgpath']."\" style=\"height:50px;width:50px;\"\"></td>\n";
 								print "                  <td>".$row['total_homestay']."</td>\n";
-								print "                  <td>".$row['size']." </td>\n";
-								print "                  <td>".$row['view']."</td>\n";
-								print "                  <td>".$row['occupancy']."</td>\n";
+								print "                  <td><img src=\"../".$row['imgpath']."\" style=\"height:50px;width:50px;\"\"></td>\n";
+								print "                  <td>".$row['total_room']."</td>\n";
+								print "                  <td>".$row['type_homestay']." </td>\n";
+								print "                  <td>".$row['parking_no']."</td>\n";
+								print "                  <td>".$row['address']."</td>\n";
 								print "                  <td>".$row['rate']."</td>\n";
 								print "                  <td>".$row['descriptions']."</td>\n";
 								print "                  <td><a href=\"edithomestay.php?homestay_id=".$row['homestay_id']."\" \">Edit</a></td><td><a class=\"delete\" href=\"deletehomestay.php?homestay_id=".$row['homestay_id']."\">Delete</a></td></tr>";					
@@ -165,21 +168,25 @@ function fnSearch()
 						<label for="total_homestay">Total Homestay</label>
 						<input type="text" class="form-control" name="total_homestay"   id="total_homestay" placeholder="Number of Homestay" required>
 					  </div>
+					  <div class="form-group">
+						<label for="total_room">Total Room</label>
+						<input type="text" class="form-control" name="total_room"   id="total_room" placeholder="Number of room" required>
+					  </div>
 					   <div class="form-group">
-						<label for="occupancy">Occupancy</label>
-						<input type="text" class="form-control" name="occupancy" id="occupancy" placeholder="max number of occupant">
+						<label for="type_homestay">Type Homestay</label>
+						<input type="text" class="form-control" name="type_homestay" id="type_homestay" placeholder=" example: Semi-D">
 					  </div>
 					  <div class="form-group">
-						<label for="size">Size</label>
-						<input type="text" class="form-control"  name="size" id="size" value="sqft" placeholder="Please write sqft or metre square: example: 250 sqft">
+						<label for="parking_no">Parking </label>
+						<input type="text" class="form-control"  name="parking_no" id="size" placeholder="Number space for parking a car ">
 					  </div>
 					  <div class="form-group">
-						<label for="view">View</label>
-						<input type="text" class="form-control" name="view" id="view" placeholder="example: city view" value="city">
+						<label for="address">Address</label>
+						<input type="text" class="form-control" name="address" id="address" placeholder="Make sure easy to find it ">
 					  </div>
 					  <div class="form-group">
 						<label for="rate">Rate</label>
-						<input type="text" class="form-control"  nsme="rate" id="rate" placeholder="Write without MYR or RM" required>
+						<input type="text" class="form-control"  name="rate" id="rate" placeholder="Write without MYR or RM" required>
 					  </div>
 					  <div class="form-group">
 						<label for="desc">Descriptions</label>
@@ -188,6 +195,7 @@ function fnSearch()
 					  <div class="form-group">
 						<label for="img">Upload Homestay Image [recommended size is 400 X 400]</label>
 						<input type="file" id="img" name="img" required>
+						
 						
 					  </div>
 					  <button type="submit" class="btn btn-default">Submit</button>
@@ -201,13 +209,13 @@ function fnSearch()
     
   <script>
   $( document ).ready(function() {
-      $("#addroom").click(function(){
+      $("#addhomestay").click(function(){
 		$("#formnew").toggle();
-		$("#roomdetail").toggle();
+		$("#addhomestay").toggle();
 	  });
 	  $("#back").click(function(){
+		$("#addhomestay").toggle();
 		$("#formnew").toggle();
-		$("#roomdetail").toggle();
 	  });
 	});
 	function moredetail(id)

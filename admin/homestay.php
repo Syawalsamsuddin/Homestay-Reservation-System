@@ -185,7 +185,7 @@ function fnSearch()
 					  </div>
 					  <div class="form-group">
 						<label for="rate">Rate</label>
-						<input type="text" class="form-control"  nsme="rate" id="rate" placeholder="Write without MYR or RM" required>
+						<input type="text" class="form-control"  name="rate" id="rate" placeholder="Write without MYR or RM" required>
 					  </div>
 					  <div class="form-group">
 						<label for="desc">Descriptions</label>
@@ -194,10 +194,7 @@ function fnSearch()
 					  <div class="form-group">
 						<label for="img">Upload Homestay Image [recommended size is 400 X 400]</label>
 						<input type="file" id="img" name="img" required>
-						<input type="file" id="img" name="img" required>
-						<input type="file" id="img" name="img" required>
-						<input type="file" id="img" name="img">
-						<input type="file" id="img" name="img">
+						
 						
 					  </div>
 					  <button type="submit" class="btn btn-default">Submit</button>
@@ -213,11 +210,11 @@ function fnSearch()
   $( document ).ready(function() {
       $("#addhomestay").click(function(){
 		$("#formnew").toggle();
-		$("#homestaydetail").toggle();
+		$("#addhomestay").toggle();
 	  });
 	  $("#back").click(function(){
+		$("#addhomestay").toggle();
 		$("#formnew").toggle();
-		$("#homestaydetail").toggle();
 	  });
 	});
 	function moredetail(id)

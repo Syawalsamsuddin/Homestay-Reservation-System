@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-bold text-black ">Homestay Sign In</h1>
+            <h2 class="text-center text-bold text-black ">Homestay</h2>
             <div class="well row pt-2x pb-3x bk-light">
               <div class="col-md-8 col-md-offset-2">
                 <form method="post">

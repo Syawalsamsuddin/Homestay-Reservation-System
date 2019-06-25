@@ -16,8 +16,8 @@ header("location: index.htm");
 
 	$sql2 = "UPDATE booking
 	SET payment_status='".$_POST['paymentstatus']."', first_name='".$_POST['firstname']."', last_name='".$_POST['lastname']."', email ='".$_POST['email']."', telephone_no ='".$_POST['telephone']."'
-	WHERE booking_id=".$_POST['bookingid'].";" ;
-	$result2 = mysqli_query($sql2);
+	WHERE booking_id=".$_POST['bookingid']."" ;
+	$result2 = mysqli_query($conn ,$sql2);
 	
 	
 	header("Refresh: 3;url=detail.php?booking=".$_POST['bookingid']."");

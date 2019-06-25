@@ -2,7 +2,7 @@
 session_start();
 include './auth.php';
 $re = mysqli_query($conn, "select * from user where username = '".$_SESSION['username']."'  AND password = '".$_SESSION['password']."' " );
-echo mysqli_error();
+echo mysqli_error($conn);
 if(mysqli_num_rows($re) > 0)
 {
 
@@ -30,7 +30,7 @@ $uploadDirForSql = "img/";
 $imgpathForSQL = $uploadDirForSql.$imagename.$imageFileType;
 
 
-	$room_name = $_POST['homestay_name'];
+	$homestay_name = $_POST['homestay_name'];
 	if(isset($_POST['total_homestay'])){
 	$total_homestay =$_POST['total_homestay'];}
 	if(isset($_POST['total_room'])){
@@ -46,9 +46,9 @@ $imgpathForSQL = $uploadDirForSql.$imagename.$imageFileType;
 	if(isset($_POST['address'])){
 	$address =$_POST['address'];}
 		
-	$sql = "INSERT INTO homestay (homestay_id, total_homestay,total_room, address, parking_no, type_homestay, homestay_name, descriptions, rate, imgpath) VALUES (null, '".$total_homestay."', '".$total_room."','".$type_homestay."', '".$parking_no."', '".$address."', '".$homestay_name."', '".$desc."', '".$rate."', '".$imgpathForSQL."')";
-	$result = mysqli_query($sql);
-	echo mysqli_error();
+	$sql = "INSERT INTO homestay (homestay_id, total_homestay,total_room, type_homestay, parking_no, address, homestay_name, descriptions, rate, imgpath) VALUES (null, '".$total_homestay."', '".$total_room."','".$type_homestay."', '".$parking_no."', '".$address."', '".$homestay_name."', '".$desc."', '".$rate."', '".$imgpathForSQL."')";
+	$result = mysqli_query($conn,$sql);
+	echo mysqli_error($conn);
 	move_uploaded_file($_FILES["img"]["tmp_name"], $imgpath);
 	
 	header('Refresh: 3;url=homestay.php');
