@@ -116,7 +116,7 @@ function fnSearch()
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-						<h2 class="sub-header">Payment Proof</h2>
+						<h2 class="sub-header">Payment Receipt</h2>
           				<div class="table-responsive">
            					 <table class="table table-striped">
              				 		<thead>
@@ -150,7 +150,7 @@ if ($result->num_rows > 0) {
 	echo "<td>" . $row['email'] . "</td>";
 	echo "<td>" . $row['phonenumber'] . "</td>";
 	// echo "<td>" . $row['file'] . "</td>";
-	echo "<td><a href=\"admin/upload/$file\">File</a></td>";
+	echo "<td><a href=\"admin/upload/$file\">Download</a></td>";
 
 	echo "</tr>";
 	}

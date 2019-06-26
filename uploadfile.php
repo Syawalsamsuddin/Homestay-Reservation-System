@@ -35,7 +35,7 @@ require_once('config.php');
       
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Upload Payment Proof</h2>
+          <h2>Upload Payment Receipt</h2>
           <p>Fill up the form with correct values.</p>
           <div class="well row pt-2x pb-3x bk-light">
               <div class="col-md-8 col-md-offset-2">
@@ -50,7 +50,7 @@ require_once('config.php');
           <label for="file"><b>Upload File </b></label>
             <input class="form-control" id="file"  type="file" name="file" required >
           <hr class="mb-3">
-          <input class="btn btn-primary" type="submit" id="uploadfile" name="submit" value="submit">
+          <input class="btn btn-primary" type="submit" id="uploadfile" name="Submit" value="Submit">
         </div>
       </div>
     </div>
@@ -90,43 +90,6 @@ require_once('config.php');
     });
   });
   
-  // $(function(){
-  //   $('#uploadfile').click(function(e){
-  //     var valid = this.form.checkValidity();
-  //     if(valid){
-  //     var email     = $('#email').val();
-  //     var phonenumber = $('#phonenumber').val();
-  //     var file  = $('#file').val();
-      
-  //       e.preventDefault(); 
-  //       $.ajax({
-  //         type: 'POST',
-  //         url: 'process-uploadfile.php',
-  //         data: {email: email,phonenumber: phonenumber,file: file},
-  //         success: function(data){
-  //         Swal.fire({
-  //               'title': 'Successful',
-  //               'text': data,
-  //               'type': 'success'
-  //               })
-              
-  //         },
-  //         error: function(data){
-  //           Swal.fire({
-  //               'title': 'Errors',
-  //               'text': 'There were errors while saving the data.',
-  //               'type': 'error'
-  //               })
-  //         }
-  //       });
-        
-  //     }else{
-        
-  //     }
-      
-  //   });   
-    
-  // });
   
 </script>
 </body>

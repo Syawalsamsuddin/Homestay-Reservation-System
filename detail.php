@@ -124,19 +124,8 @@ function fnSearch()
 										
 					print "				<tr><td>Booking ID</td>\n";
 					print "				<td>".$rows['booking_id']." </td></tr>\n";
-					print "				<tr><td>Homestay Book</td>\n";
-					print "<td>";
-					$q = mysqli_query($conn, "SELECT homestaybook.totalhomestaybook AS total, homestay.homestay_name AS name
-						FROM homestaybook
-						LEFT JOIN homestay ON homestaybook.homestay_id = homestay.homestay_id
-																WHERE homestaybook.booking_id =".$rows['booking_id'].";");
-																echo mysqli_error($conn);
-											while($r = mysqli_fetch_array($q))
-											{
-											print "                  ".$r['total']." ".$r['name']."<br> \n";
-											}
-					print "</td>";
-					print "				</tr>\n";
+					print "				<tr><td>Homestay Name</td>\n";
+					print "             <td>".$rows['homestay_name']."</td></tr>\n";
 					print "				<tr><td>Checkin Date</td>\n";
 					print "				<td>".$rows['checkin_date']."</td></tr>\n";
 					print "				<tr><td>Checkout Date</td>\n";

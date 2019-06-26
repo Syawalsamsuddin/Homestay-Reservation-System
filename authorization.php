@@ -32,7 +32,7 @@ echo "\n";
 echo "\n";
 echo "</body></html>";
 session_destroy();
-header('Refresh: 2;url=index.htm');
+header('Refresh: 2;url=index.php');
 } 
 
 ?>

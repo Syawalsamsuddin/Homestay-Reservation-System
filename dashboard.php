@@ -23,7 +23,7 @@ header("location: index.htm");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Booking System</title>
+    <title>Homestay Reservation </title>
 
   
    <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -74,6 +74,33 @@ function fnSearch()
 			});
 		}
 	  
+	  function more1()
+		{
+						document.getElementById('bookindetails').style.display='none'
+						document.getElementById('bookinginfo0').style.display='block'
+						document.getElementById('bookinginfo1').style.display='none'
+						document.getElementById('bookinginfo2').style.display='none'
+						document.getElementById('statistics').style.display='none'
+						
+		}
+function more2()
+		{
+						document.getElementById('bookindetails').style.display='none'
+						document.getElementById('bookinginfo1').style.display='block'
+						document.getElementById('bookinginfo0').style.display='none'
+						document.getElementById('bookinginfo2').style.display='none'
+						document.getElementById('statistics').style.display='none'
+						
+		}
+function more3()
+		{
+						document.getElementById('bookindetails').style.display='none'
+						document.getElementById('bookinginfo2').style.display='block'
+						document.getElementById('bookinginfo0').style.display='none'
+						document.getElementById('bookinginfo1').style.display='none'
+						document.getElementById('statistics').style.display='none'
+						
+		}
 	</script>
   <body>
 
@@ -112,7 +139,7 @@ function fnSearch()
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
          
 		 
-			<div class="container-fluid">
+				<div class="container-fluid">
 			 <h4 class="sub-header">Dashboard</h4>
 				<div class="row">	
 					<?php
