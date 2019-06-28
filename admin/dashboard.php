@@ -304,16 +304,7 @@ function more3()
 											print "<tr style=\"\">		 <td>".$row['booking_id']."</td>\n";
 											print "                  <td>".$row['checkin_date']."</td>\n";
 											print "                  <td>".$row['checkout_date']."</td>\n";
-											print "<td>";
-											$q = mysqli_query($conn, "SELECT homestaybook.totalhomestaybook AS total, homestay.homestay_name AS name
-																FROM homestaybook
-																LEFT JOIN homestay ON homestaybook.homestay_id = homestay.homestay_id
-																WHERE homestaybook.booking_id =".$row['booking_id'].";");
-											while($r = mysqli_fetch_array($q))
-											{
-											print "                  ".$r['total']." ".$r['name']." <br>\n";
-											}
-											print "</td>";
+											print "                  <td>".$row['homestay_name']."</td>\n";
 											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
@@ -353,16 +344,7 @@ function more3()
 											print "<tr style=\"\">		 <td>".$row['booking_id']."</td>\n";
 											print "                  <td>".$row['checkin_date']."</td>\n";
 											print "                  <td>".$row['checkout_date']."</td>\n";
-											$q = mysqli_query($conn, "SELECT homestaybook.totalhomestaybook AS total, homestay.homestay_name AS name
-																FROM homestaybook
-																LEFT JOIN homestay ON homestaybook.homestay_id = homestay.homestay_id
-																WHERE homestaybook.booking_id =".$row['booking_id'].";");
-											print "<td>";
-											while($r = mysqli_fetch_array($q))
-											{
-											print "                  ".$r['total']." ".$r['name']."<br> \n";
-											}
-											print "</td>";
+											print "                  <td>".$row['homestay_name']."</td>\n";
 											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";
@@ -402,16 +384,7 @@ function more3()
 											print "<tr style=\"\">		 <td>".$row['booking_id']."</td>\n";
 											print "                  <td>".$row['checkin_date']."</td>\n";
 											print "                  <td>".$row['checkout_date']."</td>\n";
-											print "<td>";
-											$q = mysqli_query($conn, "SELECT homestaybook.totalhomestaybook AS total, homestay.homestay_name AS name
-																FROM homestaybook
-																LEFT JOIN homestay ON homestaybook.homestay_id = homestay.homestay_id
-																WHERE homestaybook.booking_id =".$row['booking_id'].";");
-											while($r = mysqli_fetch_array($q))
-											{
-											print "                  ".$r['total']." ".$r['name']." <br>\n";
-											}
-											print "</td>";
+											print "                  <td>".$row['homestay_name']."</td>\n";
 											
 											print "                  <td>".$row['total_amount']."</td>\n";
 											print "                  <td>".$row['deposit']."</td>\n";

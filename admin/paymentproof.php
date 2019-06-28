@@ -91,7 +91,7 @@ function fnSearch()
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style="color: #ffffff;">Admin Booking Panel</a>
+          <a class="navbar-brand" href="#" style="color: #ffffff;">User Panel</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -105,10 +105,10 @@ function fnSearch()
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li ><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard <span class="sr-only">(current)</span></a></li>
-            
-			<li><a href="homestay.php"><i class="icon-key"></i> Homestay</a></li>
-			<li class="active"><a href="reg-user.php"><i class="icon-key"></i> Registered User</a></li>
+            <li ><a href="dashboard.php"><i class="icon-gauge"></i> Dashboard </a></li>
+           <li><a href="myprofile.php"><i class="icon-key"></i> My Profile </a></li>
+			<li><a href="homestay.php"><i class="icon-key"></i> Manage Homestay</a></li>
+			<li class="active"><a href="paymentproof.php"><i class="icon-key"></i> Payment </a></li>
 			
 			
           </ul>
@@ -116,14 +116,14 @@ function fnSearch()
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-						<h2 class="sub-header">Upload File</h2>
+						<h2 class="sub-header">Payment Receipt</h2>
           				<div class="table-responsive">
            					 <table class="table table-striped">
              				 		<thead>
 										<tr>
 										<th>Email</th>
 										<th>Phone Number</th>
-										<th>File</th>										
+										<th>Receipt</th>										
 										</tr>
 									</thead>
 									<tbody>
@@ -150,7 +150,7 @@ if ($result->num_rows > 0) {
 	echo "<td>" . $row['email'] . "</td>";
 	echo "<td>" . $row['phonenumber'] . "</td>";
 	// echo "<td>" . $row['file'] . "</td>";
-	echo "<td><a href=\"upload/$file\">File</a></td>";
+	echo "<td><a href=\"admin/upload/$file\">Download</a></td>";
 
 	echo "</tr>";
 	}

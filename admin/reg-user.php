@@ -131,14 +131,7 @@ function fnSearch()
 									<tbody>
 
 									<?php 
-//$query = $dbh -> prepare($sql);
-//$query->execute();
-//$results=$query->fetchAll(PDO::FETCH_OBJ);
-//$cnt=1;
-//if($query->rowCount() > 0)
-//{
-//foreach($results as $result)
-//{				//
+		//
 $servername="localhost";
 $username="root";
 $passwrod="";
@@ -148,7 +141,7 @@ $conn = new mysqli($servername,$username,$passwrod,$dbname);
 if ($conn->connect_error){
 	die("Connection Failed : " . $conn->connect_error);
 }
-$sql ="SELECT username,fullname,email,phonenumber,password FROM user";
+$sql ="SELECT username,fullname,email,phonenumber,password FROM owner";
 $result=$conn->query($sql);
 
 if ($result->num_rows > 0) {

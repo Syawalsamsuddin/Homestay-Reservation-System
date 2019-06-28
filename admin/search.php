@@ -33,16 +33,16 @@ include './auth.php';
 							print "                  <td>".$row['checkin_date']."</td>\n";
 							print "                  <td>".$row['checkout_date']."</td>\n";
 											print "<td>";
-											$q = mysqli_query("SELECT homestaybook.totalhomestaybook AS total, homestay.homestay_name AS name
+											$q = mysqli_query($conn,"SELECT homestaybook.totalhomestaybook AS total, homestay.homestay_name AS name
 																FROM homestaybook
 																LEFT JOIN homestay ON homestaybook.homestay_id = homestay.homestay_id
 																WHERE homestaybook.booking_id =".$row['booking_id'].";");
-											while($r = mysqli_fetch_array($r))
+											while($r = mysqli_fetch_array( $q))
 											{
 											print "                  ".$r['total']." ".$r['name']."<br> \n";
 											}
 											print "</td>";
-							print "                  <td>Adult:".$row['total_adult']."<br>Child:".$row['total_children']."</td>\n";
+							
 							print "                  <td>".$row['total_amount']."</td>\n";
 							print "                  <td>".$row['deposit']."</td>\n";
 							print "                  <td>".($row['total_amount']-$row['deposit'])."</td>\n";
